@@ -1,0 +1,222 @@
+export interface GrievanceCategory {
+  id: string;
+  nameHi: string;
+  nameEn: string;
+  descriptionHi: string;
+  descriptionEn: string;
+  icon: string;
+  suggestedDepartmentId: string;
+  sampleProblems: string[];
+}
+
+export const GRIEVANCE_CATEGORIES: GrievanceCategory[] = [
+  {
+    id: 'roads-infrastructure',
+    nameHi: 'सड़क एवं अवसंरचना',
+    nameEn: 'Roads & Infrastructure',
+    descriptionHi: 'सड़क गड्ढे, मार्ग अवरोध, डामरीकरण, पुल एवं नाली निर्माण।',
+    descriptionEn: 'Potholes, road blockage, blacktopping, bridge and culvert construction.',
+    icon: 'Hammer',
+    suggestedDepartmentId: 'pwd',
+    sampleProblems: [
+      'गांव की मुख्य संपर्क सड़क पर भारी गड्ढे एवं डामर उखड़ गया है',
+      'बरसात में भूस्खलन से सड़क अवरुद्ध है और मलबा नहीं हटा है',
+      'पुलिया क्षतिग्रस्त होने से स्कूल जाने वाले बच्चों को खतरा है',
+    ],
+  },
+  {
+    id: 'drinking-water',
+    nameHi: 'पेयजल आपूर्ति एवं स्वच्छता',
+    nameEn: 'Drinking Water & Sanitation',
+    descriptionHi: 'नियमित जल आपूर्ति न होना, पाइपलाइन लीकेज, हैंडपंप खराबी।',
+    descriptionEn: 'Irregular tap water supply, broken pipeline, contaminated water, dry handpumps.',
+    icon: 'Droplets',
+    suggestedDepartmentId: 'drinking-water',
+    sampleProblems: [
+      'हमारे गांव में पिछले 5 दिनों से पीने का पानी नहीं आ रहा है',
+      'मुख्य पाइपलाइन टूटने से हजारों लीटर स्वच्छ जल व्यर्थ बह रहा है',
+      'बस्ती के हैंडपंप से मटमैला व दूषित पानी आ रहा है',
+    ],
+  },
+  {
+    id: 'electricity',
+    nameHi: 'विद्युत एवं ऊर्जा सेवाएं',
+    nameEn: 'Electricity & Power Services',
+    descriptionHi: 'ट्रांसफॉर्मर फुंकना, अघोषित बिजली कटौती, लटकते हाई टेंशन तार।',
+    descriptionEn: 'Burnt transformer, frequent unannounced load shedding, loose wires, incorrect billing.',
+    icon: 'Zap',
+    suggestedDepartmentId: 'energy-upcl',
+    sampleProblems: [
+      'गांव का विद्युत ट्रांसफार्मर 3 दिन से जला हुआ है, रात में अंधेरा रहता है',
+      'हाई वोल्टेज आने से कई घरों के बिजली उपकरण खराब हो गए',
+      'गलियों में बिजली के खुले तार लटके हैं जो दुर्घटना का कारण बन सकते हैं',
+    ],
+  },
+  {
+    id: 'health-services',
+    nameHi: 'स्वास्थ्य एवं चिकित्सा सेवाएं',
+    nameEn: 'Health & Medical Services',
+    descriptionHi: 'अस्पतालों में डॉक्टर अनुपस्थिति, आवश्यक दवाइयों का अभाव, 108 एंबुलेंस।',
+    descriptionEn: 'Doctor absence at PHC/CHC, lack of generic medicines, emergency ambulance delay.',
+    icon: 'HeartPulse',
+    suggestedDepartmentId: 'health',
+    sampleProblems: [
+      'प्राथमिक स्वास्थ्य केंद्र (PHC) में डॉक्टर समय पर उपस्थित नहीं रहते',
+      'सरकारी अस्पताल में निशुल्क मिलने वाली जरूरी दवाइयां बाहर से लिखी जा रही हैं',
+      'आपातकालीन स्थिति में 108 एंबुलेंस सेवा 2 घंटे तक उपलब्ध नहीं हुई',
+    ],
+  },
+  {
+    id: 'education-schools',
+    nameHi: 'विद्यालयी शिक्षा एवं स्कूल',
+    nameEn: 'Education & School Infrastructure',
+    descriptionHi: 'शिक्षकों की कमी, स्कूल भवन की जर्जर स्थिति, मिड-डे मील गुणवत्ता।',
+    descriptionEn: 'Shortage of subject teachers, damaged school building, Mid-Day Meal quality issues.',
+    icon: 'GraduationCap',
+    suggestedDepartmentId: 'education',
+    sampleProblems: [
+      'राजकीय इंटर कॉलेज में गणित एवं विज्ञान के शिक्षक लंबे समय से नहीं हैं',
+      'प्राथमिक विद्यालय की छत से बरसात में पानी टपक रहा है',
+      'छात्रों को समय पर निशुल्क पाठ्यपुस्तकें और ड्रेस का पैसा नहीं मिला',
+    ],
+  },
+  {
+    id: 'agriculture-farming',
+    nameHi: 'कृषि एवं किसान कल्याण',
+    nameEn: 'Agriculture & Farmer Welfare',
+    descriptionHi: 'खाद-बीज की किल्लत, किसान सम्मान निधि किस्त, फसल क्षति मुआवजा।',
+    descriptionEn: 'Shortage of urea/DAP seeds, PM Kisan Samman Nidhi installment delay, crop damage.',
+    icon: 'Sprout',
+    suggestedDepartmentId: 'agriculture',
+    sampleProblems: [
+      'पीएम किसान सम्मान निधि की 16वीं किस्त बैंक खाते में नहीं पहुंची',
+      'सहकारी समिति में यूरिया एवं डीएपी खाद उपलब्ध नहीं हो पा रही है',
+      'ओलावृष्टि से नष्ट हुई फसलों का अभी तक पटवारी द्वारा सर्वे नहीं किया गया',
+    ],
+  },
+  {
+    id: 'police-public-safety',
+    nameHi: 'पुलिस एवं नागरिक सुरक्षा',
+    nameEn: 'Police & Public Safety',
+    descriptionHi: 'ट्रैफिक जाम, असामाजिक तत्व, साइबर फ्रॉड, महिला सुरक्षा चिंताएं।',
+    descriptionEn: 'Traffic bottlenecks, illegal parking, cyber fraud, eve-teasing, public safety concerns.',
+    icon: 'Shield',
+    suggestedDepartmentId: 'police',
+    sampleProblems: [
+      'बाजार क्षेत्र में प्रतिदिन भारी जाम एवं अवैध पार्किंग की समस्या रहती है',
+      'अज्ञात व्यक्ति द्वारा ऑनलाइन लॉटरी के नाम पर धोखाधड़ी की गई',
+      'कॉलेज मार्ग पर असामाजिक तत्वों का जमावड़ा रहता है, पुलिस गश्त बढ़ाई जाए',
+    ],
+  },
+  {
+    id: 'municipal-urban',
+    nameHi: 'नगर निकाय एवं शहरी सुविधाएं',
+    nameEn: 'Municipal & Urban Services',
+    descriptionHi: 'सड़क पर कूड़े का ढेर, बंद स्ट्रीट लाइट, नालियों की गंदगी, आवारा कुत्ते।',
+    descriptionEn: 'Uncollected garbage heaps, non-functional streetlights, choked drains, stray animals.',
+    icon: 'Building2',
+    suggestedDepartmentId: 'urban-development',
+    sampleProblems: [
+      'मोहल्ले में 4 दिनों से सफाई कर्मचारी नहीं आया, सड़क पर कूड़े का ढेर लगा है',
+      'वार्ड की 6 प्रमुख स्ट्रीट लाइट पिछले दो सप्ताह से बंद पड़ी हैं',
+      'नाली चोक होने से गंदा पानी सड़क और घरों के आगे बह रहा है',
+    ],
+  },
+  {
+    id: 'rural-development',
+    nameHi: 'ग्राम्य विकास एवं पंचायती राज',
+    nameEn: 'Rural Development & Panchayati Raj',
+    descriptionHi: 'मनरेगा मजदूरी भुगतान, ग्राम पंचायत विकास कार्य, आवास योजना सूची।',
+    descriptionEn: 'MGNREGA wage delays, incomplete Gram Panchayat works, PM Awas list inclusion.',
+    icon: 'Trees',
+    suggestedDepartmentId: 'rural-development',
+    sampleProblems: [
+      'मनरेगा में 45 दिन काम करने के बाद भी मजदूरी का भुगतान लंबित है',
+      'प्रधानमंत्री आवास योजना ग्रामीण की पात्रता सूची में नाम होने पर भी धनराशि नहीं मिली',
+      'गांव के संपर्क मार्ग का काम अधूरा छोड़कर ठेकेदार चला गया',
+    ],
+  },
+  {
+    id: 'revenue-land',
+    nameHi: 'राजस्व एवं भू-अभिलेख',
+    nameEn: 'Revenue, Land Records & Certificates',
+    descriptionHi: 'खतौनी नकल में त्रुटि, दाखिला-खारिज (म्यूटेशन) में देरी, प्रमाण पत्र जारी होना।',
+    descriptionEn: 'Errors in land record/Khatauni, delayed mutation, caste/domicile certificate delays.',
+    icon: 'FileText',
+    suggestedDepartmentId: 'revenue',
+    sampleProblems: [
+      'तहसील में दाखिल-खारिज का आवेदन 3 महीने से बिना कारण लंबित है',
+      'ऑनलाइन स्थाई निवास प्रमाण पत्र के लिए पटवारी रिपोर्ट नहीं लगाई गई है',
+      'जमीन की खतौनी में नाम की वर्तनी गलत दर्ज हो गई है, संशोधन नहीं हो रहा',
+    ],
+  },
+  {
+    id: 'social-welfare-pension',
+    nameHi: 'समाज कल्याण एवं पेंशन',
+    nameEn: 'Social Welfare & Pensions',
+    descriptionHi: 'वृद्धावस्था पेंशन, विधवा पेंशन, दिव्यांग पेंशन का बैंक खाते में न आना।',
+    descriptionEn: 'Discontinuation or delay of Old Age, Widow, or Disability pension installments.',
+    icon: 'Users',
+    suggestedDepartmentId: 'social-welfare',
+    sampleProblems: [
+      'बुजुर्ग दादाजी की वृद्धावस्था पेंशन 4 महीनों से खाते में जमा नहीं हुई है',
+      'दिव्यांग प्रमाण पत्र नवीनीकरण के बाद भी पेंशन शुरू नहीं की गई',
+      'विधवा पेंशन के लिए आवेदन किए 6 माह बीत चुके हैं, स्टेटस पेंडिंग है',
+    ],
+  },
+  {
+    id: 'transport-bus',
+    nameHi: 'सार्वजनिक परिवहन एवं बस सेवा',
+    nameEn: 'Public Transport & Roadways',
+    descriptionHi: 'रोडवेज बसों का समय पर न चलना, ग्रामीण रूट पर बस अभाव, अधिक किराया।',
+    descriptionEn: 'Lack of Uttarakhand Roadways buses on hilly routes, overcharging, bus station facilities.',
+    icon: 'Bus',
+    suggestedDepartmentId: 'transport',
+    sampleProblems: [
+      'पहाड़ी रूट पर शाम के समय रोडवेज बस नियमित नहीं चलती, यात्री परेशान होते हैं',
+      'बस कंडक्टर द्वारा निर्धारित सरकारी किराए से अधिक राशि वसूली जा रही है',
+      'स्थानीय बस स्टैंड पर पीने के पानी और महिला शौचालय की व्यवस्था नहीं है',
+    ],
+  },
+  {
+    id: 'forest-wildlife',
+    nameHi: 'वन एवं वन्यजीव मामले',
+    nameEn: 'Forest & Wildlife Protection',
+    descriptionHi: 'जंगली जानवरों से फसलों का नुकसान, गुलदार (तेंदुआ) का खौफ, जंगल की आग।',
+    descriptionEn: 'Wild boars/monkeys destroying crops, leopard threat near village, forest fires.',
+    icon: 'Mountain',
+    suggestedDepartmentId: 'forest',
+    sampleProblems: [
+      'जंगली सुअरों और बंदरों के झुंड ने गेहूं की आधी फसल बर्बाद कर दी है',
+      'गांव के समीप शाम ढलते ही गुलदार देखा गया है, वन विभाग पिंजरा लगाए',
+      'निकटवर्ती जंगल में आग लग गई है जिसे तत्काल बुझाने हेतु दल भेजा जाए',
+    ],
+  },
+  {
+    id: 'ration-food-supplies',
+    nameHi: 'खाद्य एवं राशन वितरण',
+    nameEn: 'Food Supplies & Ration System',
+    descriptionHi: 'सस्ता गल्ला दुकान से कम राशन मिलना, कोटेदार की मनमानी, राशन कार्ड में नाम।',
+    descriptionEn: 'Underweighing at fair price shop, dealer absenteeism, ration card name addition.',
+    icon: 'ShoppingBag',
+    suggestedDepartmentId: 'food-supplies',
+    sampleProblems: [
+      'राशन डीलर द्वारा निर्धारित 5 किलो के स्थान पर प्रति यूनिट केवल 4 किलो खाद्यान्न दिया जा रहा है',
+      'राशन कार्ड में नवजात शिशु का नाम जुड़वाने हेतु तहसील में आवेदन लंबित है',
+      'कोटेदार महीने में केवल दो दिन दुकान खोलता है जिससे कई परिवार राशन से वंचित हैं',
+    ],
+  },
+  {
+    id: 'other-services',
+    nameHi: 'अन्य सरकारी सेवाएं',
+    nameEn: 'Other Government Services',
+    descriptionHi: 'उपरोक्त श्रेणियों के अतिरिक्त किसी अन्य राज्य विभाग से संबंधित जन समस्या।',
+    descriptionEn: 'Any other citizen issue or public service grievance not listed above.',
+    icon: 'HelpCircle',
+    suggestedDepartmentId: 'revenue',
+    sampleProblems: [
+      'सार्वजनिक पार्क में प्रकाश व बेंच की व्यवस्था ठीक नहीं है',
+      'सरकारी योजना की जानकारी हेतु जिला कार्यालय में कोई मार्गदर्शन नहीं मिल रहा',
+    ],
+  },
+];
